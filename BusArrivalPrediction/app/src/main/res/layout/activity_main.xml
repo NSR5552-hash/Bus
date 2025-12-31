@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundLight"
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:title="@string/main_title"
+        app:titleTextColor="@color/colorTextWhite" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Selection Card -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Route Selection -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_route"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerRoute"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:minHeight="48dp"
+                        android:spinnerMode="dropdown" />
+
+                    <!-- Stop Selection -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_stop"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerStop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:minHeight="48dp"
+                        android:spinnerMode="dropdown" />
+
+                    <!-- Get Arrivals Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnGetArrivals"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/get_arrivals" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Results Section -->
+            <TextView
+                android:id="@+id/tvResultsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/next_arrival"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <!-- Arrivals RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewArrivals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                tools:listitem="@layout/item_bus_arrival" />
+
+            <!-- Empty State -->
+            <LinearLayout
+                android:id="@+id/layoutEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="🚌"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/select_route_stop"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
