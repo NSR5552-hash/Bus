@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary_blue">#1976D2</color>
+    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimaryDark">#1565C0</color>
+    <color name="colorAccent">#2196F3</color>
+    
+    <!-- Background Colors -->
+    <color name="colorBackground">#F5F5F5</color>
+    <color name="colorBackgroundLight">#E3F2FD</color>
+    <color name="colorCardBackground">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#333333</color>
+    <color name="colorTextSecondary">#666666</color>
+    <color name="colorTextHint">#999999</color>
+    <color name="colorTextWhite">#FFFFFF</color>
+    
+    <!-- Status Colors -->
+    <color name="colorSuccess">#4CAF50</color>
+    <color name="colorError">#F44336</color>
+    <color name="colorWarning">#FF9800</color>
+    
+    <!-- Launcher Icon -->
+    <color name="ic_launcher_background">#1976D2</color>
+</resources>
